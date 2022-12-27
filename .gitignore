@@ -2,6 +2,7 @@
 .config
 .cache
 .*_history
+tmp/
 alpine-sh
 docker.build
 docker.build-ext

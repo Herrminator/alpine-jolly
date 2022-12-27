@@ -1,4 +1,4 @@
-FROM alpine:jolly
+FROM herrminator/alpine:jolly
 
 RUN apk add --no-cache ipcalc whois
 
