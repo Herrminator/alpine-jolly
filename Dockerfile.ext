@@ -1,0 +1,5 @@
+FROM alpine:jolly
+
+RUN apk add --no-cache ipcalc whois
+
+CMD ["/bin/bash"]
