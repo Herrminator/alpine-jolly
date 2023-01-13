@@ -5,5 +5,5 @@ Just a vanilla alpine with some packages I usually need.
 Currently building on 3.17.1
 
 ## Github ##
-  git config credential.https://github.com.username Herrminator
-  git config credential.helper "store --file $HOME/docker/git/.gitcredentials"
+  - git config "credential.https://github.com.username" Herrminator
+  - git config "credential.helper" "store --file $HOME/docker/git/.git-credentials"
