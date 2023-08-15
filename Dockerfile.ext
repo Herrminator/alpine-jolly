@@ -1,5 +1,5 @@
 FROM herrminator/alpine:jolly
 
-RUN apk add --no-cache ipcalc whois
+RUN apk add --no-cache grep diffutils ipcalc whois
 
 CMD ["/bin/bash"]

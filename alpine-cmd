@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# no arrays in BB ass - erm ash
+# declare -A interactive
+# interactive[ipcalc]=true
+interactive_ipcalc="true"
+interactive_less="true"
+interactive_htop="true"
+
+cmd=$(basename $0)
+[ "$cmd" == "alpine-cmd" ] && cmd=
+
+eval ia="\$interactive_$cmd"
+
+export DOCKER_INTERACTIVE=${DOCKER_INTERACTIVE-"-a stdin -a stdout -a stderr --sig-proxy=true"}
+# HACK ALERT:
+if [ "$ia" == "true" ]; then
+  tts=$(ttysize); cols=${tts% *}; lines=${tts#* }
+  export DOCKER_INTERACTIVE="-ti -e COLUMNS=$cols -e LINES=$lines"
+fi
+
+alpine-sh $cmd "$@"
