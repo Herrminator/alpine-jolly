@@ -2,7 +2,7 @@
 Just a vanilla alpine with some packages I usually need.
 
 # Version #
-Currently building on 3.18.4
+Currently building on 3.18.5
 
 ## Github ##
   - git config "credential.https://github.com.username" Herrminator
