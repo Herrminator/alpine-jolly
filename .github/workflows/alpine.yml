@@ -30,6 +30,7 @@ jobs:
           file: ./Dockerfile
           push: true
           provenance: mode=max
+          sbom: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
           tags: |
@@ -43,6 +44,7 @@ jobs:
           file: ./Dockerfile.ext
           push: true
           provenance: mode=max
+          sbom: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
           tags: |
