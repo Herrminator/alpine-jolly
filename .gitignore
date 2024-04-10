@@ -2,7 +2,11 @@
 .config
 .cache
 .*_history
+*.tmp
+*.bak
+*.sav
 tmp/
+alpine.packages.current
 alpine-sh
 docker.build
 docker.build-ext

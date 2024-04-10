@@ -1,6 +1,22 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
+  "enabledManagers": [ "custom.regex" ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": [ "(^|/)alpine\\.packages$" ],
+      "datasourceTemplate": "repology",
+      "versioningTemplate": "loose",
+      "depNameTemplate": "alpine_3_19/{{{pkg}}}",
+      "matchStrings": [
+        "(?<pkg>.*?)=(?<currentValue>.*)"
+      ]
+    }
+  ],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["alpine_3_19"],
+      "groupName": "alpine"
+    }
   ]
 }
