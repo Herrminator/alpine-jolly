@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Generate a list of installed alpine packages that can trigger a
+# pull request by renovate bot (or, some day, dependabot)
+
+out="alpine.packages.current"
+
+echo "# Packages used:" > "${out}"
+
+export DOCKER_INTERACTIVE="-a stdin -a stdout -a stderr --sig-proxy=true"
+
+# https://superuser.com/a/1472405
+alpine-sh apk list -I | python -c "import sys, re
+for m in re.finditer(r'(.+)-([^-]+-r[^-]+) (\S+) \{(\S+)\} \((.+?)\)', sys.stdin.read()):
+  pkgname, pkgver, arch, group, license = m.groups()
+  print(f'{pkgname}={pkgver}')
+" >> "${out}"
+
+[ ! -f "alpine.packages" ] && cp -p "${out}" "alpine.packages"
