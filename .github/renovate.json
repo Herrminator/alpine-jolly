@@ -20,5 +20,7 @@
       "groupSlug": "alpine"
     }
   ],
-  "separateMajorMinor": false
+  "separateMajorMinor": false,
+  "timezone": "Europe/Berlin",
+  "schedule": ["before 4am"]
 }
