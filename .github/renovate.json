@@ -16,7 +16,9 @@
   "packageRules": [
     {
       "matchPackagePatterns": ["alpine_3_19"],
-      "groupName": "alpine"
+      "groupName": "Alpine package updates",
+      "groupSlug": "alpine"
     }
-  ]
+  ],
+  "separateMajorMinor": false
 }
