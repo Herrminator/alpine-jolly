@@ -17,7 +17,8 @@
     {
       "matchPackagePatterns": ["alpine_3_19"],
       "groupName": "Alpine packages",
-      "groupSlug": "alpine"
+      "groupSlug": "alpine",
+      "schedule": ["before 4am"]
     }
   ],
   "separateMajorMinor": false,
