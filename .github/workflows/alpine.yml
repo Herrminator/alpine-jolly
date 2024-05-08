@@ -23,6 +23,12 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push base image
         uses: docker/build-push-action@v5
@@ -37,6 +43,7 @@ jobs:
           cache-to: type=gha,mode=max
           tags: |
              ${{ secrets.DOCKER_HUB_USERNAME }}/alpine:jolly
+             ghcr.io/${{ github.actor }}/alpine:jolly
 
       - name: Build and push extended image
         uses: docker/build-push-action@v5
@@ -51,6 +58,7 @@ jobs:
           cache-to: type=gha,mode=max
           tags: |
              ${{ secrets.DOCKER_HUB_USERNAME }}/alpine:jolly-ext
+             ghcr.io/${{ github.actor }}/alpine:jolly-ext
 
       - name: Docker Hub Description
         uses: peter-evans/dockerhub-description@v4
