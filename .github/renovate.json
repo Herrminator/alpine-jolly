@@ -7,7 +7,7 @@
       "fileMatch": [ "(^|/)alpine\\.packages$" ],
       "datasourceTemplate": "repology",
       "versioningTemplate": "loose",
-      "depNameTemplate": "alpine_3_19/{{{pkg}}}",
+      "depNameTemplate": "alpine_3_20/{{{pkg}}}",
       "matchStrings": [
         "(?<pkg>.*?)=(?<currentValue>.*)"
       ]
@@ -15,7 +15,7 @@
   ],
   "packageRules": [
     {
-      "matchPackagePatterns": ["alpine_3_19"],
+      "matchPackagePatterns": ["alpine_3_20"],
       "groupName": "Alpine packages",
       "groupSlug": "alpine"
     }
