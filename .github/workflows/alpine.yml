@@ -52,9 +52,9 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           tags: |
-             ${{ secrets.DOCKER_HUB_USERNAME }}/alpine:jolly
-             ${{ secrets.DOCKER_HUB_USERNAME }}/alpine:jolly-${{ env.alpine_version_tag }}
              ${{ secrets.DOCKER_HUB_USERNAME }}/alpine:jolly-${{ env.alpine_minor_version_tag }}
+             ${{ secrets.DOCKER_HUB_USERNAME }}/alpine:jolly-${{ env.alpine_version_tag }}
+             ${{ secrets.DOCKER_HUB_USERNAME }}/alpine:jolly
              ghcr.io/${{ env.repo_name }}/alpine:jolly
 
       - name: Build and push extended image
@@ -69,9 +69,9 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           tags: |
-             ${{ secrets.DOCKER_HUB_USERNAME }}/alpine:jolly-ext
-             ${{ secrets.DOCKER_HUB_USERNAME }}/alpine:jolly-ext-${{ env.alpine_version_tag }}
              ${{ secrets.DOCKER_HUB_USERNAME }}/alpine:jolly-ext-${{ env.alpine_minor_version_tag }}
+             ${{ secrets.DOCKER_HUB_USERNAME }}/alpine:jolly-ext-${{ env.alpine_version_tag }}
+             ${{ secrets.DOCKER_HUB_USERNAME }}/alpine:jolly-ext
              ghcr.io/${{ env.repo_name }}/alpine:jolly-ext
 
       - name: Docker Hub Description
