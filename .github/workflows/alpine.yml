@@ -8,6 +8,10 @@ on:
       - ".github/**"
   workflow_dispatch:
 
+env: # for scripts
+  alpine_version_tag: "3.20" # TODO: get from tags / release / whatever
+  alpine_minor_version_tag: "3.20.3"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -49,6 +53,8 @@ jobs:
           cache-to: type=gha,mode=max
           tags: |
              ${{ secrets.DOCKER_HUB_USERNAME }}/alpine:jolly
+             ${{ secrets.DOCKER_HUB_USERNAME }}/alpine:jolly-${{ env.alpine_version_tag }}
+             ${{ secrets.DOCKER_HUB_USERNAME }}/alpine:jolly-${{ env.alpine_minor_version_tag }}
              ghcr.io/${{ env.repo_name }}/alpine:jolly
 
       - name: Build and push extended image
@@ -64,6 +70,8 @@ jobs:
           cache-to: type=gha,mode=max
           tags: |
              ${{ secrets.DOCKER_HUB_USERNAME }}/alpine:jolly-ext
+             ${{ secrets.DOCKER_HUB_USERNAME }}/alpine:jolly-ext-${{ env.alpine_version_tag }}
+             ${{ secrets.DOCKER_HUB_USERNAME }}/alpine:jolly-ext-${{ env.alpine_minor_version_tag }}
              ghcr.io/${{ env.repo_name }}/alpine:jolly-ext
 
       - name: Docker Hub Description
