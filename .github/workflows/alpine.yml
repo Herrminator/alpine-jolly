@@ -9,8 +9,8 @@ on:
   workflow_dispatch:
 
 env: # for scripts
-  alpine_version_tag: "3.21" # TODO: get from tags / release / whatever
-  alpine_minor_version_tag: "3.21.3"
+  alpine_version_tag: "3.22" # TODO: get from tags / release / whatever
+  alpine_minor_version_tag: "3.22.0"
 
 jobs:
   build:
