@@ -4,7 +4,7 @@ Just a vanilla alpine with some packages I usually need.
 [![Docker Build](https://github.com/Herrminator/alpine-jolly/actions/workflows/alpine.yml/badge.svg)](https://github.com/Herrminator/alpine-jolly/actions/workflows/alpine.yml)
 
 # Version #
-Currently building on 3.22.0
+Currently building on 3.22.1
 
 ## Github ##
   - git config "credential.https://github.com.username" Herrminator
