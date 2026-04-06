@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [ "workarounds:reduceRepologyServerLoad" ] ,
-  "enabledManagers": [ "custom.regex" ],
+  "enabledManagers": [ "custom.regex", "github-actions" ],
   "customManagers": [
     {
       "customType": "regex",
@@ -19,6 +19,12 @@
       "matchPackagePatterns": ["alpine_3_23"],
       "groupName": "Alpine packages",
       "groupSlug": "alpine"
+    },
+    {
+      "matchManagers": [ "github-actions" ],
+      "matchPackageNames": [ "*" ],
+      "groupName": "GitHub Actions",
+      "groupSlug": "actions"
     }
   ],
   "separateMajorMinor": false,
