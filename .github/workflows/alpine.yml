@@ -11,7 +11,7 @@ on:
 env: # for scripts
   alpine_version_tag: "3.23" # TODO: get from tags / release / whatever
   alpine_minor_version_tag: "3.23.4"
-  alpine_jolly_tag: "3.23.4-p1"
+  alpine_jolly_tag: "3.23.4-p2"
 
 jobs:
   build:
