@@ -9,16 +9,16 @@ on:
   workflow_dispatch:
 
 env: # for scripts
-  alpine_version_tag: "3.23" # TODO: get from tags / release / whatever
-  alpine_minor_version_tag: "3.23.4"
-  alpine_jolly_tag: "3.23.4-p2"
+  alpine_version_tag: "3.24" # TODO: get from tags / release / whatever
+  alpine_minor_version_tag: "3.24.1"
+  alpine_jolly_tag: "3.24.1-p0"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v4
       - name: Set up Docker Buildx
