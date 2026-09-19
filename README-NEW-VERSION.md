@@ -1,4 +1,5 @@
 # Checklist
+- [ ] `docker pull alpine`
 - [ ] Build locally (`docker.build-ext`)
 - [ ] Run `alpine-packages`, compare and **copy** `alpine.packages.current` to `alpine.packages`
 - [ ] Edit README.md
